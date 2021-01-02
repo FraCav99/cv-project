@@ -10,6 +10,13 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+.App {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .focus-list-element {
   padding: 10px 0 10px 20px;
   background-color: #222831;
@@ -44,8 +51,8 @@ body {
 }
 
 .Menu .menu-header svg {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   fill: #f05454;
   cursor: pointer;
 }
@@ -81,5 +88,110 @@ body {
 
 .Menu .menu-body ul li:hover {
   color: #a1a1a1;
+}
+
+@media screen and (max-width: 993px) {
+  .Menu {
+    width: 100%;
+    position: absolute;
+    left: -10px;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+  }
+}
+
+@media screen and (max-width: 632px) {
+  .Menu {
+    position: absolute;
+    left: 0px;
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+  }
+}
+
+.side-menu-active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  width: 100%;
+  z-index: 99;
+}
+
+.Main {
+  width: 70%;
+}
+
+.Main .main-header {
+  height: 10vh;
+  border: 1px solid #222831;
+}
+
+.Main .main-header .burger-menu {
+  cursor: pointer;
+  height: 50%;
+  margin-top: 15px;
+  margin-left: 20px;
+  width: 50px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Main .main-header .burger-menu .line {
+  border: 2px solid #f05454;
+  border-radius: 50px;
+}
+
+.Main .main-header .burger-menu .line-2 {
+  width: 70%;
+}
+
+.Main .main-header .burger-menu .line-3 {
+  width: 50%;
+}
+
+.Main .main-body {
+  height: 90vh;
+}
+
+.Main .main-body img {
+  padding: 20px;
+  width: 100%;
+  height: 400px;
+}
+
+.Main .main-body .text-content {
+  text-align: center;
+  color: #ddd;
+  font-size: 25px;
+  margin-top: 80px;
+}
+
+@media screen and (max-width: 993px) {
+  .Main {
+    width: 100%;
+  }
+  .Main .main-header .burger-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .Main .main-body img {
+    height: 500px;
+  }
+  .Main .main-body .text-content {
+    margin-top: 0px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

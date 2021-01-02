@@ -1,0 +1,60 @@
+.Main {
+  width: 70%;
+  .main-header {
+    height: 10vh;
+    border: 1px solid $deepBlack;
+    .burger-menu {
+      cursor: pointer;
+      height: 50%;
+      margin-top: 15px;
+      margin-left: 20px;
+      width: 50px;
+      display: none; // flex
+      flex-direction: column;
+      justify-content: space-around;
+      .line {
+        border: 2px solid $brightOrange;
+        border-radius: 50px;
+      }
+      .line-2 {
+        width: 70%;
+      }
+      .line-3 {
+        width: 50%;
+      }
+    }
+  }
+  .main-body {
+    height: 90vh;
+    img {
+      padding: 20px;
+      width: 100%;
+      height: 400px;
+    }
+    .text-content {
+      text-align: center;
+      color: $lightGray;
+      font-size: 25px;
+      margin-top: 80px;
+    }
+  }
+}
+
+@media screen and (max-width: 993px) {
+  .Main {
+    width: 100%;
+    .main-header {
+      .burger-menu {
+        display: flex;
+      }
+    }
+    .main-body {
+      img {
+        height: 500px;
+      }
+      .text-content {
+        margin-top: 0px;
+      }
+    }
+  }
+}

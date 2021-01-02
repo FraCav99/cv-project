@@ -18,6 +18,11 @@ body {
   font-family: $NotoSans;
 }
 
+.App {
+  position: relative;
+  display: flex;
+}
+
 // Effect for Menu index when active
 .focus-list-element {
   padding: 10px 0 10px 20px;

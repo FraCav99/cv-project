@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 
 class Menu extends Component {
+    toggleMenu = () => {
+        const sideMenu = document.querySelector('.Menu');
+        if (window.innerWidth <= 966) {
+            sideMenu.classList.toggle('side-menu-active');
+        } else return;
+    }
+
     render() {
+        const {toggleMenu} = this;
         return (
             <div className="Menu">
                 <div className="menu-header">
@@ -12,9 +20,9 @@ class Menu extends Component {
                 </div>
                 <div className="menu-body">
                     <ul>
-                        <li>Personal Info</li>
-                        <li>Education</li>
-                        <li>Work Experiences</li>
+                        <li onClick={toggleMenu}>Personal Info</li>
+                        <li onClick={toggleMenu}>Education</li>
+                        <li onClick={toggleMenu}>Work Experiences</li>
                     </ul>
                 </div>
             </div>
