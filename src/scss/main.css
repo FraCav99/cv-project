@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #222831;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.focus-list-element {
+  padding: 10px 0 10px 20px;
+  background-color: #222831;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, #f05454, #222831);
+}
+
+.Menu {
+  background-color: #30475e;
+  height: 100vh;
+  width: 30%;
+}
+
+.Menu .menu-header {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.Menu .menu-header h1 {
+  color: #f05454;
+  font-size: 30px;
+}
+
+.Menu .menu-header svg {
+  width: 30px;
+  height: 30px;
+  fill: #f05454;
+  cursor: pointer;
+}
+
+.Menu .menu-header svg:hover {
+  fill: #b33c3c;
+}
+
+.Menu .menu-body {
+  height: 90vh;
+}
+
+.Menu .menu-body ul {
+  padding-left: 30px;
+  list-style-type: none;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Menu .menu-body ul li {
+  cursor: pointer;
+  font-size: 30px;
+  color: #ddd;
+}
+
+.Menu .menu-body ul li:hover {
+  color: #a1a1a1;
+}
+/*# sourceMappingURL=main.css.map */
