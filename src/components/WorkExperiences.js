@@ -21,7 +21,7 @@ class WorkExperiences extends Component {
                 </div>
                 <div className="work-body">
                     <div className="image-container">
-                        <img src={WorkImg} alt="work-image" />
+                        <img src={WorkImg} alt="work-experiences" />
                     </div>
                     <div className="button-container">
                         <button>Add Work</button>

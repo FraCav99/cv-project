@@ -33,6 +33,7 @@ body {
   background-color: #30475e;
   height: 100vh;
   width: 30%;
+  z-index: 99;
 }
 
 .Menu .menu-header {
@@ -127,7 +128,6 @@ body {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
   width: 100%;
-  z-index: 99;
 }
 
 .Main {

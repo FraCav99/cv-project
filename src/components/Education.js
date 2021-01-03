@@ -21,7 +21,7 @@ class Education extends Component {
                 </div>
                 <div className="education-body">
                     <div className="image-container">
-                        <img src={EducationImg} alt="edu-image" />
+                        <img src={EducationImg} alt="education-experience" />
                     </div>
                     <div className="button-container">
                         <button>Add Education</button>
