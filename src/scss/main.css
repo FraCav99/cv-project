@@ -255,6 +255,15 @@ body {
   font-size: 30px;
 }
 
+.PersonalInfo .info-header .close-button-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  fill: #ddd;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
 .PersonalInfo .info-body {
   height: 89.5vh;
 }
@@ -296,6 +305,58 @@ body {
 }
 
 .PersonalInfo .info-body .button-container button:hover {
+  background-color: #b33c3c;
+}
+
+.PersonalInfo .personal-info-modal {
+  height: 89.5vh;
+}
+
+.PersonalInfo .personal-info-modal form {
+  height: 100%;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.PersonalInfo .personal-info-modal form div label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ddd;
+}
+
+.PersonalInfo .personal-info-modal form div input {
+  width: 100%;
+  background-color: #222831;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  padding: 0 5px 5px 5px;
+  color: #ddd;
+}
+
+.PersonalInfo .personal-info-modal form button {
+  background-color: #f05454;
+  color: #ddd;
+  font-weight: 500;
+  font-size: 20px;
+  width: 200px;
+  margin: 0 auto 0 auto;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.PersonalInfo .personal-info-modal form button:hover {
   background-color: #b33c3c;
 }
 
