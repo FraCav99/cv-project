@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Menu from './components/Menu';
 import Main from './components/Main';
 import PersonalInfo from './components/PersonalInfo';
+import Education from './components/Education';
 import './scss/main.css';
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
         <Menu />
         <Main />
         <PersonalInfo />
+        <Education />
       </div>
     )
   }

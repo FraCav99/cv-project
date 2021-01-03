@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import InfoImage from '../images/undraw_personal_information_962o.svg';
+import EducationImg from '../images/undraw_road_to_knowledge_m8s0.svg';
 
-class PersonalInfo extends Component {
+class Education extends Component {
     toggleMenu = () => {
         const sideMenu = document.querySelector('.Menu');
         sideMenu.classList.toggle('side-menu-active');
@@ -10,26 +10,29 @@ class PersonalInfo extends Component {
     render() {
         const {toggleMenu} = this;
         return (
-            <div className="PersonalInfo not-visible">
-                <div className="info-header">
+            <div className="Education">
+                <div className="education-header">
                     <div className="burger-menu" onClick={toggleMenu}>
                         <span className="line line-1"></span>
                         <span className="line line-2"></span>
                         <span className="line line-3"></span>
                     </div>
-                    <h2>Personal Info</h2>
+                    <h2>Education</h2>
                 </div>
-                <div className="info-body">
+                <div className="education-body">
                     <div className="image-container">
-                        <img src={InfoImage} alt="Personal-info-img" />
+                        <img src={EducationImg} alt="edu-image" />
                     </div>
                     <div className="button-container">
-                        <button>Add info</button>
+                        <button>Add Education</button>
                     </div>
                 </div>
+                <button className="add-education-btn not-visible">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+                </button>
             </div>
         )
     }
 }
 
-export default PersonalInfo;
+export default Education

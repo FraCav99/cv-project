@@ -1,7 +1,8 @@
-.PersonalInfo {
+.Education {
   width: 70%;
   height: 100vh;
-  .info-header {
+  position: relative;
+  .education-header {
     height: 10vh;
     display: flex;
     .burger-menu {
@@ -32,7 +33,7 @@
       font-size: 30px;
     }
   }
-  .info-body {
+  .education-body {
     height: 89.5vh;
     .image-container {
       height: 70vh;
@@ -64,12 +65,32 @@
       }
     }
   }
+
+  .add-education-btn {
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: $brightOrange;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.5s;
+    svg {
+      fill: $lightGray;
+      width: 20px;
+      height: 20px;
+    }
+    &:hover {
+      background-color: #b33c3c;
+    }
+  }
 }
 
 @media screen and (max-width: 993px) {
-  .PersonalInfo {
+  .Education {
     width: 100%;
-    .info-header {
+    .education-header {
       .burger-menu {
         display: flex;
       }
@@ -80,7 +101,7 @@
 // tablet
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .PersonalInfo {
-    .info-body {
+    .education-body {
       .image-container {
         padding: 90px;
       }
@@ -90,8 +111,8 @@
 
 // phone
 @media screen and (max-width: 360px) {
-  .PersonalInfo {
-    .info-body {
+  .Education {
+    .education-body {
       .image-container {
         padding: 0 20px;
       }
