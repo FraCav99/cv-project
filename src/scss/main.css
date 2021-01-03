@@ -171,17 +171,21 @@ body {
   height: 90vh;
 }
 
-.Main .main-body img {
-  padding: 20px;
+.Main .main-body .image-container {
+  height: 70vh;
+  padding: 50px;
+}
+
+.Main .main-body .image-container img {
   width: 100%;
-  height: 400px;
+  height: 100%;
 }
 
 .Main .main-body .text-content {
+  height: 19.5vh;
   text-align: center;
   color: #ddd;
   font-size: 25px;
-  margin-top: 80px;
 }
 
 @media screen and (max-width: 993px) {

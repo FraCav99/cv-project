@@ -10,7 +10,7 @@ class WorkExperiences extends Component {
     render() {
         const {toggleMenu} = this;
         return (
-            <div className="WorkExp">
+            <div className="WorkExp not-visible">
                 <div className="work-header">
                     <div className="burger-menu" onClick={toggleMenu}>
                         <span className="line line-1"></span>

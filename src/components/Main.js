@@ -10,7 +10,7 @@ class Main extends Component {
     render() {
         const {toggleMenu} = this;
         return (
-            <div className="Main not-visible">
+            <div className="Main">
                 <div className="main-header">
                     <div className="burger-menu" onClick={toggleMenu}>
                         <span className="line line-1"></span>
@@ -19,7 +19,9 @@ class Main extends Component {
                     </div>
                 </div>
                 <div className="main-body">
-                    <img src={MainImage} alt="main-img"/>
+                    <div className="image-container">
+                        <img src={MainImage} alt="main-img"/>
+                    </div>
                     <div className="text-content">
                         <p>Start building your CV!</p>
                         <p>Select one index from the side menu.</p>
