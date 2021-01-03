@@ -458,4 +458,145 @@ body {
     padding: 0 20px;
   }
 }
+
+.WorkExp {
+  width: 70%;
+  height: 100vh;
+  position: relative;
+}
+
+.WorkExp .work-header {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.WorkExp .work-header .burger-menu {
+  cursor: pointer;
+  height: 50%;
+  margin-top: 15px;
+  margin-left: 20px;
+  width: 50px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.WorkExp .work-header .burger-menu .line {
+  border: 2px solid #f05454;
+  border-radius: 50px;
+}
+
+.WorkExp .work-header .burger-menu .line-2 {
+  width: 70%;
+}
+
+.WorkExp .work-header .burger-menu .line-3 {
+  width: 50%;
+}
+
+.WorkExp .work-header h2 {
+  text-align: center;
+  width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #ddd;
+  font-size: 30px;
+}
+
+.WorkExp .work-body {
+  height: 89.5vh;
+}
+
+.WorkExp .work-body .image-container {
+  height: 70vh;
+  padding: 50px;
+}
+
+.WorkExp .work-body .image-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.WorkExp .work-body .button-container {
+  height: 19.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.WorkExp .work-body .button-container button {
+  background-color: #f05454;
+  border: none;
+  color: #ddd;
+  margin: auto;
+  padding: 20px 40px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.WorkExp .work-body .button-container button:hover {
+  background-color: #b33c3c;
+}
+
+.WorkExp .add-work-btn {
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f05454;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.WorkExp .add-work-btn svg {
+  fill: #ddd;
+  width: 20px;
+  height: 20px;
+}
+
+.WorkExp .add-work-btn:hover {
+  background-color: #b33c3c;
+}
+
+@media screen and (max-width: 993px) {
+  .WorkExp {
+    width: 100%;
+  }
+  .WorkExp .work-header .burger-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .WorkExp .work-body .image-container {
+    padding: 90px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .WorkExp .work-body .image-container {
+    padding: 0 20px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
