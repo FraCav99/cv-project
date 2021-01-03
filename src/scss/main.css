@@ -17,6 +17,10 @@ body {
   display: flex;
 }
 
+.not-visible {
+  display: none !important;
+}
+
 .focus-list-element {
   padding: 10px 0 10px 20px;
   background-color: #222831;
@@ -84,6 +88,8 @@ body {
   cursor: pointer;
   font-size: 30px;
   color: #ddd;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .Menu .menu-body ul li:hover {
