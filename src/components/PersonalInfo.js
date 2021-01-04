@@ -19,6 +19,7 @@ class PersonalInfo extends Component {
         }
 
         this.initialErrorsState = this.state.errors;
+        this.initialPersonalInfoState = this.state.personalInfo;
     }
 
     toggleMenu = () => {
@@ -31,7 +32,11 @@ class PersonalInfo extends Component {
         const InfoModal = document.querySelector('.personal-info-modal');
         const infoBody = document.querySelector('.info-body');
 
-        this.setState({errors: this.initialErrorsState});
+        // Reset State
+        this.setState({
+            personalInfo: this.initialPersonalInfoState,
+            errors: this.initialErrorsState
+        });
 
         closeBtn.classList.toggle('not-visible');
         InfoModal.classList.toggle('not-visible');
@@ -92,14 +97,15 @@ class PersonalInfo extends Component {
         const err = this.validate();
 
         if (!err) {
-            this.setState({personalInfo, isSubmitted: true});
+            this.setState({personalInfo, isSubmitted: true});   // Update personaliInfo state
+            this.initialPersonalInfoState = personalInfo;   // Update reset personalInfo data
             this.toggleModal();
         }
     }
 
     render() {
         const {toggleMenu, toggleModal, handleChange, handleSubmit} = this;
-        const {errors, personalInfo} = this.state;
+        const {errors, personalInfo, isSubmitted} = this.state;
         return (
             <div className="PersonalInfo not-visible">
                 <div className="info-header">
@@ -114,14 +120,65 @@ class PersonalInfo extends Component {
                     </div>
                 </div>
 
-                <div className="info-body">
-                    <div className="image-container">
-                        <img src={InfoImage} alt="Personal-info-img" />
-                    </div>
-                    <div className="button-container">
-                        <button className="add-info-btn" onClick={toggleModal}>Add info</button>
-                    </div>
-                </div>
+                {
+                    isSubmitted ? 
+                    (
+                        <div className="info-body">
+                            <div className="info-container">
+                                <div className="left-panel">
+                                    <div className="first-row">
+                                        <label>First Name</label>
+                                        <p>{personalInfo.firstName}</p>
+                                    </div>
+                                    <div className="second-row">
+                                        <label>Last Name</label>
+                                        <p>{personalInfo.lastName}</p>
+                                    </div>
+                                    <div className="third-row">
+                                        <label>Role</label>
+                                        <p>{personalInfo.role}</p>
+                                    </div>
+                                </div>
+                                <div className="right-panel">
+                                    <div className="first-row">
+                                        <label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
+                                            Address
+                                        </label>
+                                        <p>{personalInfo.address}</p>
+                                    </div>
+                                    <div className="second-row">
+                                        <label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17.5 2c.276 0 .5.224.5.5v19c0 .276-.224.5-.5.5h-11c-.276 0-.5-.224-.5-.5v-19c0-.276.224-.5.5-.5h11zm2.5 0c0-1.104-.896-2-2-2h-12c-1.104 0-2 .896-2 2v20c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2v-20zm-9.5 1h3c.276 0 .5.224.5.501 0 .275-.224.499-.5.499h-3c-.275 0-.5-.224-.5-.499 0-.277.225-.501.5-.501zm1.5 18c-.553 0-1-.448-1-1s.447-1 1-1c.552 0 .999.448.999 1s-.447 1-.999 1zm5-3h-10v-13h10v13z"/></svg>
+                                            Phone Number
+                                        </label>
+                                        <p>{personalInfo.phoneNumber}</p>
+                                    </div>
+                                    <div className="third-row">
+                                        <label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+                                            Email
+                                        </label>
+                                        <p>{personalInfo.email}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="button-container">
+                                <button className="add-info-btn" onClick={toggleModal}>Edit info</button>
+                            </div>
+                        </div>
+                    ) : 
+                    (
+                        <div className="info-body">
+                            <div className="image-container">
+                                <img src={InfoImage} alt="Personal-info-img" />
+                            </div>
+                            <div className="button-container">
+                                <button className="add-info-btn" onClick={toggleModal}>Add info</button>
+                            </div>
+                        </div>
+                    )
+                }
 
                 <div className="personal-info-modal not-visible">
                     <form>
@@ -160,8 +217,12 @@ class PersonalInfo extends Component {
                             {errors.emailError && <small className="error-pop-up">{errors.emailError}</small>}
                             <input type="text" name="email" className="input-field" value={personalInfo.email} onChange={handleChange} />
                         </div>
-
-                        <button type="submit" onClick={handleSubmit}>Add info</button>
+                        
+                        {
+                            isSubmitted ? 
+                            <button type="submit" onClick={handleSubmit}>Edit info</button> :
+                            <button type="submit" onClick={handleSubmit}>Add info</button>
+                        }
                     </form>
                 </div>
             </div>

@@ -48,6 +48,57 @@
         height: 100%;
       }
     }
+    .info-container {
+      height: 70vh;
+      display: flex;
+      padding: 20px 0;
+      .left-panel {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        div {
+          width: 50%;
+          margin: 0 auto;
+          label {
+            color: $lightGray;
+            font-weight: bold;
+            font-size: 25px;
+            margin-bottom: 10px;
+          }
+          p {
+            color: $lightGray;
+            font-weight: 300;
+          }
+        }
+      }
+      .right-panel {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        div {
+          width: 50%;
+          margin: 0 auto;
+          label {
+            color: $lightGray;
+            font-weight: bold;
+            font-size: 25px;
+            margin-bottom: 10px;
+            svg {
+              fill: $lightGray;
+              width: 20px;
+              height: 20px;
+              margin-right: 7px;
+            }
+          }
+          p {
+            color: $lightGray;
+            font-weight: 300;
+          }
+        }
+      }
+    }
     .button-container {
       height: 19.5vh;
       display: flex;
