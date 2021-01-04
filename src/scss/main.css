@@ -341,6 +341,10 @@ body {
   color: #ddd;
 }
 
+.PersonalInfo .personal-info-modal form div .error-pop-up {
+  color: #f05454;
+}
+
 .PersonalInfo .personal-info-modal form button {
   background-color: #f05454;
   color: #ddd;
