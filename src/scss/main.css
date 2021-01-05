@@ -584,7 +584,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 20px;
+  padding: 20px 30px;
 }
 
 .Education .education-body .education-item .item-header span {
@@ -672,6 +672,12 @@ body {
   color: #ddd;
 }
 
+.Education .education-modal form div input:focus {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
 .Education .education-modal form div .error-pop-up {
   color: #f05454;
 }
@@ -698,6 +704,7 @@ body {
   color: #ddd;
   padding: 5px 10px;
   font-family: "Noto Sans", sans-serif;
+  resize: none;
 }
 
 .Education .education-modal form button {

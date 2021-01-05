@@ -80,7 +80,7 @@
       .item-header {
         display: flex;
         justify-content: space-between;
-        padding: 20px;
+        padding: 20px 30px;
         span {
           color: $lightGray;
           font-weight: bold;
@@ -144,6 +144,11 @@
           border-bottom: 2px solid $lightGray;
           padding: 0 5px 5px 5px;
           color: $lightGray;
+          &:focus {
+            border-top: none;
+            border-right: none;
+            border-left: none;
+          }
         }
         .error-pop-up {
           color: $brightOrange;
@@ -167,6 +172,7 @@
           color: $lightGray;
           padding: 5px 10px;
           font-family: $NotoSans;
+          resize: none;
         }
       }
       button {

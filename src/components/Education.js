@@ -22,6 +22,7 @@ class Education extends Component {
         const closeBtn = document.querySelector('.close-button-education');
         const EducationModal = document.querySelector('.education-modal');
         const EducationBody = document.querySelector('.education-body');
+        const secondaryAddEducationBtn = document.querySelector('.add-education-btn');
 
         // Reset input fields
         const inputFields = document.querySelectorAll('.input-field');
@@ -35,6 +36,10 @@ class Education extends Component {
         closeBtn.classList.toggle('not-visible');
         EducationModal.classList.toggle('not-visible');
         EducationBody.classList.toggle('not-visible');
+
+        if (this.state.education.length > 0) {
+            secondaryAddEducationBtn.classList.toggle('not-visible');
+        }
     }
 
     validate = () => {
@@ -117,36 +122,39 @@ class Education extends Component {
                 </div>
 
             
-                <div className="education-body">
-                    <div className="education-item">
-                        <div className="item-header">
-                            <span>2012-2018</span>
-                            <div className="action-buttons">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.127 22.564l-7.126 1.436 1.438-7.125 5.688 5.689zm-4.274-7.104l5.688 5.689 15.46-15.46-5.689-5.689-15.459 15.46z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+                {education.length > 0 ? (
+                    <div className="education-body">
+                        {education.map((item, index) => {
+                            return (
+                                <div key={index} id={index} className="education-item">
+                                <div className="item-header">
+                                    <span>{item.startDate}-{item.endDate}</span>
+                                    <div className="action-buttons">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.127 22.564l-7.126 1.436 1.438-7.125 5.688 5.689zm-4.274-7.104l5.688 5.689 15.46-15.46-5.689-5.689-15.459 15.46z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+                                    </div>
+                                </div>
+                                <div className="item-main">
+                                    <p className="degree-title">{item.degree}</p>
+                                    <p className="location">{item.city}, {item.school}</p>
+                                </div>
+                                <div className="item-description">
+                                    <p>{item.description}</p>
+                                </div>
                             </div>
+                            )
+                        })}
+                    </div>
+                ) : (
+                    <div className="education-body">
+                        <div className="image-container">
+                            <img src={EducationImg} alt="education-experience" />
                         </div>
-                        <div className="item-main">
-                            <p className="degree-title">Phd Physical Education</p>
-                            <p className="location">London, Cambridge University</p>
-                        </div>
-                        <div className="item-description">
-                            <p>
-                                lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                                lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                            </p>
+                        <div className="button-container">
+                            <button onClick={toggleModal}>Add Education</button>
                         </div>
                     </div>
-                </div>
-
-                <div className="education-body not-visible">
-                    <div className="image-container">
-                        <img src={EducationImg} alt="education-experience" />
-                    </div>
-                    <div className="button-container">
-                        <button onClick={toggleModal}>Add Education</button>
-                    </div>
-                </div>
+                )}
 
                 <div className="education-modal not-visible">
                     <form>
@@ -193,9 +201,15 @@ class Education extends Component {
                     </form>
                 </div>
 
-                <button className="add-education-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
-                </button>
+                {education.length > 0 ? (
+                    <button className="add-education-btn" onClick={toggleModal}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+                    </button>
+                ) : (
+                    <button className="add-education-btn not-visible">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+                    </button>
+                )}
             </div>
         )
     }
