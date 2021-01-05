@@ -32,6 +32,12 @@
       color: $lightGray;
       font-size: 30px;
     }
+    .close-button-container {
+      align-self: center;
+      fill: $lightGray;
+      cursor: pointer;
+      margin-right: 20px;
+    }
   }
   .education-body {
     height: 89.5vh;
@@ -66,24 +72,87 @@
     }
   }
 
-  .add-education-btn {
-    cursor: pointer;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: $brightOrange;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    transition: all 0.5s;
-    svg {
-      fill: $lightGray;
-      width: 20px;
-      height: 20px;
+  .education-modal {
+    height: 89.5vh;
+    form {
+      height: 100%;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      div {
+        label {
+          display: block;
+          margin-bottom: 5px;
+          color: $lightGray;
+        }
+        input {
+          width: 100%;
+          background-color: $deepBlack;
+          border: none;
+          border-bottom: 2px solid $lightGray;
+          padding: 0 5px 5px 5px;
+          color: $lightGray;
+        }
+      }
+      .period {
+        display: flex;
+        div {
+          width: 50%;
+          input {
+            width: 150px;
+          }
+        }
+      }
+      .description {
+        textarea {
+          width: 100%;
+          background-color: $deepBlack;
+          border-radius: 5px;
+          border: 1px solid $lightGray;
+          color: $lightGray;
+          padding: 5px 10px;
+          font-family: $NotoSans;
+        }
+      }
+      button {
+        background-color: $brightOrange;
+        color: $lightGray;
+        font-weight: 500;
+        font-size: 20px;
+        width: 200px;
+        margin: 0 auto 0 auto;
+        border: none;
+        border-radius: 50px;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.5s;
+        &:hover {
+          background-color: #b33c3c;
+        }
+      }
     }
-    &:hover {
-      background-color: #b33c3c;
-    }
+  }
+}
+
+// Secondary button to add items
+.add-education-btn {
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: $brightOrange;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.5s;
+  svg {
+    fill: $lightGray;
+    width: 20px;
+    height: 20px;
+  }
+  &:hover {
+    background-color: #b33c3c;
   }
 }
 

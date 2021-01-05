@@ -10,7 +10,7 @@ class Main extends Component {
     render() {
         const {toggleMenu} = this;
         return (
-            <div className="Main">
+            <div className="Main not-visible">
                 <div className="main-header">
                     <div className="burger-menu" onClick={toggleMenu}>
                         <span className="line line-1"></span>

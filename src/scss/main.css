@@ -515,6 +515,15 @@ body {
   font-size: 30px;
 }
 
+.Education .education-header .close-button-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  fill: #ddd;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
 .Education .education-body {
   height: 89.5vh;
 }
@@ -559,7 +568,83 @@ body {
   background-color: #b33c3c;
 }
 
-.Education .add-education-btn {
+.Education .education-modal {
+  height: 89.5vh;
+}
+
+.Education .education-modal form {
+  height: 100%;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Education .education-modal form div label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ddd;
+}
+
+.Education .education-modal form div input {
+  width: 100%;
+  background-color: #222831;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  padding: 0 5px 5px 5px;
+  color: #ddd;
+}
+
+.Education .education-modal form .period {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Education .education-modal form .period div {
+  width: 50%;
+}
+
+.Education .education-modal form .period div input {
+  width: 150px;
+}
+
+.Education .education-modal form .description textarea {
+  width: 100%;
+  background-color: #222831;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  color: #ddd;
+  padding: 5px 10px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.Education .education-modal form button {
+  background-color: #f05454;
+  color: #ddd;
+  font-weight: 500;
+  font-size: 20px;
+  width: 200px;
+  margin: 0 auto 0 auto;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.Education .education-modal form button:hover {
+  background-color: #b33c3c;
+}
+
+.add-education-btn {
   cursor: pointer;
   position: absolute;
   bottom: 20px;
@@ -572,13 +657,13 @@ body {
   transition: all 0.5s;
 }
 
-.Education .add-education-btn svg {
+.add-education-btn svg {
   fill: #ddd;
   width: 20px;
   height: 20px;
 }
 
-.Education .add-education-btn:hover {
+.add-education-btn:hover {
   background-color: #b33c3c;
 }
 
