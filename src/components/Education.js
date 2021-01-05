@@ -8,7 +8,8 @@ class Education extends Component {
         this.state = {
             education: [],
             tempEduItem: {},
-            isEdited: false
+            isEdited: false,
+            errors: {}
         }
     }
 
@@ -17,25 +18,90 @@ class Education extends Component {
         sideMenu.classList.toggle('side-menu-active');
     }
 
+    toggleModal = () => {
+        const closeBtn = document.querySelector('.close-button-education');
+        const EducationModal = document.querySelector('.education-modal');
+        const EducationBody = document.querySelector('.education-body');
+
+        // Reset input fields
+        const inputFields = document.querySelectorAll('.input-field');
+        inputFields.forEach(input => input.value = '');
+
+        //Reset State
+        this.setState({
+            errors: {}
+        });
+
+        closeBtn.classList.toggle('not-visible');
+        EducationModal.classList.toggle('not-visible');
+        EducationBody.classList.toggle('not-visible');
+    }
+
+    validate = () => {
+        let isError = false;
+        const errors = {};
+        const regExp = /[a-zA-Z]/g; // check for characters in a string
+
+        const school = document.getElementById('school').value;
+        const city = document.getElementById('city').value;
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+        const degree = document.getElementById('degree').value;
+
+        if (!school) {
+            isError = true;
+            errors.school = 'Cannot be empty';
+        }
+        if (!city) {
+            isError = true;
+            errors.city = 'Cannot be empty';
+        }
+        if (!startDate || regExp.test(startDate) || startDate.length < 4) {
+            isError = true;
+            errors.startDate = 'Cannot be empty and must be at least 4 digits long';
+        }
+        if (regExp.test(endDate)) {
+            isError = true;
+            errors.endDate = 'Must be at least 4 digits long and must contains digits';
+        }
+        if (!degree) {
+            isError = true;
+            errors.degree = 'Cannot be empty';
+        }
+
+        // Add errors object to state if is not empty
+        if (Object.keys(errors).length > 0 && errors.constructor === Object) {
+            this.setState({errors});
+        }
+
+        return isError;
+    }
+
     addItem = (ev) => {
         ev.preventDefault();
         const eduItem = {};
-        
-        eduItem.id = this.state.education.length;
-        eduItem.school = document.getElementById('school').value;
-        eduItem.city = document.getElementById('city').value;
-        eduItem.startDate = document.getElementById('startDate').value;
-        eduItem.endDate = document.getElementById('endDate').value || "Present";
-        eduItem.degree = document.getElementById('degree').value;
-        eduItem.description = document.getElementById('description').value;
+        const err = this.validate();
 
-        this.setState({
-            education: [...this.state.education, eduItem],
-        });
+        if (!err) {
+            eduItem.id = this.state.education.length;
+            eduItem.school = document.getElementById('school').value;
+            eduItem.city = document.getElementById('city').value;
+            eduItem.startDate = document.getElementById('startDate').value;
+            eduItem.endDate = document.getElementById('endDate').value || "Present";
+            eduItem.degree = document.getElementById('degree').value;
+            eduItem.description = document.getElementById('description').value;
+    
+            this.setState({
+                education: [...this.state.education, eduItem],
+            });
+
+            this.toggleModal();
+        } else return;
     }
 
     render() {
-        const {toggleMenu} = this;
+        const {toggleMenu, toggleModal} = this;
+        const {errors} = this.state;
         return (
             <div className="Education">
                 <div className="education-header">
@@ -45,53 +111,58 @@ class Education extends Component {
                         <span className="line line-3"></span>
                     </div>
                     <h2>Education</h2>
-                    <div className="close-button-container">
+                    <div className="close-button-education not-visible" onClick={toggleModal}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
                     </div>
                 </div>
-                <div className="education-body not-visible">
+                <div className="education-body">
                     <div className="image-container">
                         <img src={EducationImg} alt="education-experience" />
                     </div>
                     <div className="button-container">
-                        <button>Add Education</button>
+                        <button onClick={toggleModal}>Add Education</button>
                     </div>
                 </div>
 
-                <div className="education-modal">
+                <div className="education-modal not-visible">
                     <form>
                         <div>
                             <label>School</label>
-                            <input type="text" id="school"/>
+                            {errors.school && <small className="error-pop-up">{errors.school}</small>}
+                            <input type="text" id="school" className="input-field"/>
                         </div>
 
                         <div>
                             <label>City</label>
-                            <input type="text" id="city"/>
+                            {errors.city && <small className="error-pop-up">{errors.city}</small>}
+                            <input type="text" id="city" className="input-field"/>
                         </div>
 
                         <div className="period">
                             <div>
                                 <label>From</label>
-                                <input type="text" id="startDate"/>
+                                {errors.startDate && <small className="error-pop-up">{errors.startDate}</small>}
+                                <input type="text" id="startDate" className="input-field"/>
                             </div>
                             <div>
                                 <label>
                                     To
                                     <small> ("Present" if empty)</small>
                                 </label>
-                                <input type="text" id="endDate"/>
+                                {errors.endDate && <small className="error-pop-up">{errors.endDate}</small>}
+                                <input type="text" id="endDate" className="input-field"/>
                             </div>
                         </div>
 
                         <div>
                             <label>Degree</label>
-                            <input type="text" id="degree"/>
+                            {errors.degree && <small className="error-pop-up">{errors.degree}</small>}
+                            <input type="text" id="degree" className="input-field"/>
                         </div>
 
                         <div className="description">
                             <label>Description</label>
-                            <textarea rows="7" id="description"></textarea>
+                            <textarea rows="7" id="description" className="input-field"></textarea>
                         </div>
 
                         <button type="submit" onClick={this.addItem}>Add Education</button>

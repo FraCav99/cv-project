@@ -32,7 +32,7 @@
       color: $lightGray;
       font-size: 30px;
     }
-    .close-button-container {
+    .close-button-education {
       align-self: center;
       fill: $lightGray;
       cursor: pointer;
@@ -93,6 +93,9 @@
           border-bottom: 2px solid $lightGray;
           padding: 0 5px 5px 5px;
           color: $lightGray;
+        }
+        .error-pop-up {
+          color: $brightOrange;
         }
       }
       .period {

@@ -255,7 +255,7 @@ body {
   font-size: 30px;
 }
 
-.PersonalInfo .info-header .close-button-container {
+.PersonalInfo .info-header .close-button-info {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -515,7 +515,7 @@ body {
   font-size: 30px;
 }
 
-.Education .education-header .close-button-container {
+.Education .education-header .close-button-education {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -599,6 +599,10 @@ body {
   border-bottom: 2px solid #ddd;
   padding: 0 5px 5px 5px;
   color: #ddd;
+}
+
+.Education .education-modal form div .error-pop-up {
+  color: #f05454;
 }
 
 .Education .education-modal form .period {
