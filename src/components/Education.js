@@ -101,7 +101,7 @@ class Education extends Component {
 
     render() {
         const {toggleMenu, toggleModal} = this;
-        const {errors} = this.state;
+        const {errors, education} = this.state;
         return (
             <div className="Education">
                 <div className="education-header">
@@ -115,7 +115,31 @@ class Education extends Component {
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
                     </div>
                 </div>
+
+            
                 <div className="education-body">
+                    <div className="education-item">
+                        <div className="item-header">
+                            <span>2012-2018</span>
+                            <div className="action-buttons">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.127 22.564l-7.126 1.436 1.438-7.125 5.688 5.689zm-4.274-7.104l5.688 5.689 15.46-15.46-5.689-5.689-15.459 15.46z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+                            </div>
+                        </div>
+                        <div className="item-main">
+                            <p className="degree-title">Phd Physical Education</p>
+                            <p className="location">London, Cambridge University</p>
+                        </div>
+                        <div className="item-description">
+                            <p>
+                                lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                                lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="education-body not-visible">
                     <div className="image-container">
                         <img src={EducationImg} alt="education-experience" />
                     </div>
@@ -169,7 +193,7 @@ class Education extends Component {
                     </form>
                 </div>
 
-                <button className="add-education-btn not-visible">
+                <button className="add-education-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
                 </button>
             </div>

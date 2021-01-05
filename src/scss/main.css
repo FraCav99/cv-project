@@ -526,6 +526,8 @@ body {
 
 .Education .education-body {
   height: 89.5vh;
+  padding: 20px;
+  overflow-y: scroll;
 }
 
 .Education .education-body .image-container {
@@ -566,6 +568,75 @@ body {
 
 .Education .education-body .button-container button:hover {
   background-color: #b33c3c;
+}
+
+.Education .education-body .education-item {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, #f05454, #ddd);
+  margin-bottom: 30px;
+}
+
+.Education .education-body .education-item .item-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+}
+
+.Education .education-body .education-item .item-header span {
+  color: #ddd;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.Education .education-body .education-item .item-header .action-buttons {
+  width: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Education .education-body .education-item .item-header .action-buttons svg {
+  cursor: pointer;
+}
+
+.Education .education-body .education-item .item-header .action-buttons svg:first-child {
+  fill: #ddd;
+}
+
+.Education .education-body .education-item .item-header .action-buttons svg:last-child {
+  fill: #b40000;
+}
+
+.Education .education-body .education-item .item-main {
+  padding: 20px;
+  text-align: center;
+}
+
+.Education .education-body .education-item .item-main .degree-title {
+  color: #ddd;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.Education .education-body .education-item .item-main .location {
+  color: #ddd;
+  font-size: 20px;
+}
+
+.Education .education-body .education-item .item-description {
+  padding: 20px;
+}
+
+.Education .education-body .education-item .item-description p {
+  color: #ddd;
 }
 
 .Education .education-modal {

@@ -41,6 +41,8 @@
   }
   .education-body {
     height: 89.5vh;
+    padding: 20px;
+    overflow-y: scroll;
     .image-container {
       height: 70vh;
       padding: 50px;
@@ -67,6 +69,55 @@
         transition: background-color 0.5s;
         &:hover {
           background-color: #b33c3c;
+        }
+      }
+    }
+    .education-item {
+      border: 2px solid;
+      border-image-slice: 1;
+      border-image-source: linear-gradient(to right, $brightOrange, $lightGray);
+      margin-bottom: 30px;
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        span {
+          color: $lightGray;
+          font-weight: bold;
+          font-size: 20px;
+        }
+        .action-buttons {
+          width: 80px;
+          display: flex;
+          justify-content: space-between;
+          svg {
+            cursor: pointer;
+            &:first-child {
+              fill: $lightGray;
+            }
+            &:last-child {
+              fill: rgb(180, 0, 0);
+            }
+          }
+        }
+      }
+      .item-main {
+        padding: 20px;
+        text-align: center;
+        .degree-title {
+          color: $lightGray;
+          font-weight: bold;
+          font-size: 50px;
+        }
+        .location {
+          color: $lightGray;
+          font-size: 20px;
+        }
+      }
+      .item-description {
+        padding: 20px;
+        p {
+          color: $lightGray;
         }
       }
     }
