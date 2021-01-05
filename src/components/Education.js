@@ -37,6 +37,7 @@ class Education extends Component {
         EducationModal.classList.toggle('not-visible');
         EducationBody.classList.toggle('not-visible');
 
+        // Conditionally render the secondary "add" button
         if (this.state.education.length > 0) {
             secondaryAddEducationBtn.classList.toggle('not-visible');
         }
@@ -88,7 +89,7 @@ class Education extends Component {
         const err = this.validate();
 
         if (!err) {
-            eduItem.id = this.state.education.length;
+            // eduItem.id = this.state.education.length;
             eduItem.school = document.getElementById('school').value;
             eduItem.city = document.getElementById('city').value;
             eduItem.startDate = document.getElementById('startDate').value;
@@ -104,8 +105,29 @@ class Education extends Component {
         } else return;
     }
 
+    // editItem = (ev) => {
+    //     ev.preventDefault();
+    // }
+
+    filterArray(arr, index) {
+        if (index > -1) {
+          arr.splice(index, 1);
+        }
+    
+        return arr;
+    }
+
+    deleteItem = (ev) => {
+        const {education} = this.state;
+        const itemId = ev.currentTarget.parentNode.parentNode.parentNode.getAttribute('id');
+        console.log(itemId);
+        this.setState({
+            education: this.filterArray(education, itemId)
+        });
+    }
+
     render() {
-        const {toggleMenu, toggleModal} = this;
+        const {toggleMenu, toggleModal, addItem, deleteItem} = this;
         const {errors, education} = this.state;
         return (
             <div className="Education">
@@ -131,7 +153,7 @@ class Education extends Component {
                                     <span>{item.startDate}-{item.endDate}</span>
                                     <div className="action-buttons">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.127 22.564l-7.126 1.436 1.438-7.125 5.688 5.689zm-4.274-7.104l5.688 5.689 15.46-15.46-5.689-5.689-15.459 15.46z"/></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+                                        <svg onClick={deleteItem} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
                                     </div>
                                 </div>
                                 <div className="item-main">
@@ -197,7 +219,7 @@ class Education extends Component {
                             <textarea rows="7" id="description" className="input-field"></textarea>
                         </div>
 
-                        <button type="submit" onClick={this.addItem}>Add Education</button>
+                        <button type="submit" onClick={addItem}>Add Education</button>
                     </form>
                 </div>
 
