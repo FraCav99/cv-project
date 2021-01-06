@@ -528,6 +528,8 @@ body {
   height: 89.5vh;
   padding: 20px;
   overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #f05454 #222831;
 }
 
 .Education .education-body .image-container {
@@ -541,7 +543,7 @@ body {
 }
 
 .Education .education-body .button-container {
-  height: 19.5vh;
+  height: 15vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -43,6 +43,8 @@
     height: 89.5vh;
     padding: 20px;
     overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: $brightOrange $deepBlack;
     .image-container {
       height: 70vh;
       padding: 50px;
@@ -52,7 +54,7 @@
       }
     }
     .button-container {
-      height: 19.5vh;
+      height: 15vh;
       display: flex;
       justify-content: center;
       align-self: center;
