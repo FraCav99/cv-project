@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/cv-project/static/css/main.9c4c1dfa.chunk.css",
+    "main.js": "/cv-project/static/js/main.443990d0.chunk.js",
+    "main.js.map": "/cv-project/static/js/main.443990d0.chunk.js.map",
+    "runtime-main.js": "/cv-project/static/js/runtime-main.e0af79ca.js",
+    "runtime-main.js.map": "/cv-project/static/js/runtime-main.e0af79ca.js.map",
+    "static/js/2.d66a7785.chunk.js": "/cv-project/static/js/2.d66a7785.chunk.js",
+    "static/js/2.d66a7785.chunk.js.map": "/cv-project/static/js/2.d66a7785.chunk.js.map",
+    "index.html": "/cv-project/index.html",
+    "static/css/main.9c4c1dfa.chunk.css.map": "/cv-project/static/css/main.9c4c1dfa.chunk.css.map",
+    "static/js/2.d66a7785.chunk.js.LICENSE.txt": "/cv-project/static/js/2.d66a7785.chunk.js.LICENSE.txt",
+    "static/media/undraw_Work_time_re_hdyv.b820d014.svg": "/cv-project/static/media/undraw_Work_time_re_hdyv.b820d014.svg",
+    "static/media/undraw_files_6b3d.6cf1bf2f.svg": "/cv-project/static/media/undraw_files_6b3d.6cf1bf2f.svg",
+    "static/media/undraw_personal_information_962o.42177c18.svg": "/cv-project/static/media/undraw_personal_information_962o.42177c18.svg",
+    "static/media/undraw_road_to_knowledge_m8s0.63ca498e.svg": "/cv-project/static/media/undraw_road_to_knowledge_m8s0.63ca498e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e0af79ca.js",
+    "static/js/2.d66a7785.chunk.js",
+    "static/css/main.9c4c1dfa.chunk.css",
+    "static/js/main.443990d0.chunk.js"
+  ]
+}
