@@ -698,6 +698,10 @@ body {
   width: 150px;
 }
 
+.Education .education-modal form .description label small {
+  margin-left: 10px;
+}
+
 .Education .education-modal form .description textarea {
   width: 100%;
   background-color: #222831;
@@ -825,8 +829,21 @@ body {
   font-size: 30px;
 }
 
+.WorkExp .work-header .close-button-work {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  fill: #ddd;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
 .WorkExp .work-body {
   height: 89.5vh;
+  padding: 20px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #f05454 #222831;
 }
 
 .WorkExp .work-body .image-container {
@@ -840,7 +857,7 @@ body {
 }
 
 .WorkExp .work-body .button-container {
-  height: 19.5vh;
+  height: 15vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -866,6 +883,166 @@ body {
 }
 
 .WorkExp .work-body .button-container button:hover {
+  background-color: #b33c3c;
+}
+
+.WorkExp .work-body .work-item {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, #f05454, #ddd);
+  margin-bottom: 30px;
+}
+
+.WorkExp .work-body .work-item .item-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.WorkExp .work-body .work-item .item-header span {
+  color: #ddd;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.WorkExp .work-body .work-item .item-header .action-buttons {
+  width: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.WorkExp .work-body .work-item .item-header .action-buttons svg {
+  cursor: pointer;
+}
+
+.WorkExp .work-body .work-item .item-header .action-buttons svg:first-child {
+  fill: #ddd;
+}
+
+.WorkExp .work-body .work-item .item-header .action-buttons svg:last-child {
+  fill: #b40000;
+}
+
+.WorkExp .work-body .work-item .item-main {
+  padding: 20px;
+  text-align: center;
+}
+
+.WorkExp .work-body .work-item .item-main .role-title {
+  color: #ddd;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.WorkExp .work-body .work-item .item-main .location {
+  color: #ddd;
+  font-size: 20px;
+}
+
+.WorkExp .work-body .work-item .item-description {
+  padding: 20px;
+}
+
+.WorkExp .work-body .work-item .item-description p {
+  color: #ddd;
+}
+
+.WorkExp .work-modal {
+  height: 89.5vh;
+}
+
+.WorkExp .work-modal form {
+  height: 100%;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.WorkExp .work-modal form div label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ddd;
+}
+
+.WorkExp .work-modal form div input {
+  width: 100%;
+  background-color: #222831;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  padding: 0 5px 5px 5px;
+  color: #ddd;
+}
+
+.WorkExp .work-modal form div input:focus {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.WorkExp .work-modal form div .error-pop-up {
+  color: #f05454;
+}
+
+.WorkExp .work-modal form .period {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.WorkExp .work-modal form .period div {
+  width: 50%;
+}
+
+.WorkExp .work-modal form .period div input {
+  width: 150px;
+}
+
+.WorkExp .work-modal form .description label small {
+  margin-left: 10px;
+}
+
+.WorkExp .work-modal form .description textarea {
+  width: 100%;
+  background-color: #222831;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  color: #ddd;
+  padding: 5px 10px;
+  font-family: "Noto Sans", sans-serif;
+  resize: none;
+}
+
+.WorkExp .work-modal form button {
+  background-color: #f05454;
+  color: #ddd;
+  font-weight: 500;
+  font-size: 20px;
+  width: 200px;
+  margin: 0 auto 0 auto;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.WorkExp .work-modal form button:hover {
   background-color: #b33c3c;
 }
 

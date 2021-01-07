@@ -297,7 +297,10 @@ class Education extends Component {
                         </div>
 
                         <div className="description">
-                            <label>Description</label>
+                            <label>
+                                Description
+                                <small>(optional)</small>
+                            </label>
                             {
                                 isEdited ?
                                 <textarea rows="7" id="description" onChange={handleEditChange} value={tempEduItem.description} className="input-field"></textarea> :

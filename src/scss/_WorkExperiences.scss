@@ -32,9 +32,19 @@
       color: $lightGray;
       font-size: 30px;
     }
+    .close-button-work {
+      align-self: center;
+      fill: $lightGray;
+      cursor: pointer;
+      margin-right: 20px;
+    }
   }
   .work-body {
     height: 89.5vh;
+    padding: 20px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: $brightOrange $deepBlack;
     .image-container {
       height: 70vh;
       padding: 50px;
@@ -44,7 +54,7 @@
       }
     }
     .button-container {
-      height: 19.5vh;
+      height: 15vh;
       display: flex;
       justify-content: center;
       align-self: center;
@@ -64,8 +74,135 @@
         }
       }
     }
+
+    .work-item {
+      border: 2px solid;
+      border-image-slice: 1;
+      border-image-source: linear-gradient(to right, $brightOrange, $lightGray);
+      margin-bottom: 30px;
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 30px;
+        span {
+          color: $lightGray;
+          font-weight: bold;
+          font-size: 20px;
+        }
+        .action-buttons {
+          width: 80px;
+          display: flex;
+          justify-content: space-between;
+          svg {
+            cursor: pointer;
+            &:first-child {
+              fill: $lightGray;
+            }
+            &:last-child {
+              fill: rgb(180, 0, 0);
+            }
+          }
+        }
+      }
+      .item-main {
+        padding: 20px;
+        text-align: center;
+        .role-title {
+          color: $lightGray;
+          font-weight: bold;
+          font-size: 50px;
+        }
+        .location {
+          color: $lightGray;
+          font-size: 20px;
+        }
+      }
+      .item-description {
+        padding: 20px;
+        p {
+          color: $lightGray;
+        }
+      }
+    }
   }
 
+  .work-modal {
+    height: 89.5vh;
+    form {
+      height: 100%;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      div {
+        label {
+          display: block;
+          margin-bottom: 5px;
+          color: $lightGray;
+        }
+        input {
+          width: 100%;
+          background-color: $deepBlack;
+          border: none;
+          border-bottom: 2px solid $lightGray;
+          padding: 0 5px 5px 5px;
+          color: $lightGray;
+          &:focus {
+            border-top: none;
+            border-right: none;
+            border-left: none;
+          }
+        }
+        .error-pop-up {
+          color: $brightOrange;
+        }
+      }
+      .period {
+        display: flex;
+        div {
+          width: 50%;
+          input {
+            width: 150px;
+          }
+        }
+      }
+      .description {
+        label {
+          small {
+            margin-left: 10px;
+          }
+        }
+        textarea {
+          width: 100%;
+          background-color: $deepBlack;
+          border-radius: 5px;
+          border: 1px solid $lightGray;
+          color: $lightGray;
+          padding: 5px 10px;
+          font-family: $NotoSans;
+          resize: none;
+        }
+      }
+      button {
+        background-color: $brightOrange;
+        color: $lightGray;
+        font-weight: 500;
+        font-size: 20px;
+        width: 200px;
+        margin: 0 auto 0 auto;
+        border: none;
+        border-radius: 50px;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.5s;
+        &:hover {
+          background-color: #b33c3c;
+        }
+      }
+    }
+  }
+
+  // Secondary button to add items
   .add-work-btn {
     cursor: pointer;
     position: absolute;

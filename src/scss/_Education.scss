@@ -166,6 +166,11 @@
         }
       }
       .description {
+        label {
+          small {
+            margin-left: 10px;
+          }
+        }
         textarea {
           width: 100%;
           background-color: $deepBlack;
