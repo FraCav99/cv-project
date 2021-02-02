@@ -1,4 +1,4 @@
 # cv-project
 TOP cv-project
 
-Live site: <a href="https://fracav99.github.io/cv-project/" target="blank">Here</a>
+Live site: <a href="https://fracav99.github.io/cv-project/" target="blank_">Here</a>
